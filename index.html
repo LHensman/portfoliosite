@@ -6,19 +6,36 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
+<script>
+  window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  const pageTop = window.pageYOffset || document.documentElement.scrollTop;
+  const isNearTop = pageTop < 100;
+  header.classList.toggle('sticky', isNearTop && header.dataset.mouseOver === 'true');
+});
+
+document.addEventListener('mouseover', function(e) {
+  const header = document.querySelector('header');
+  const isNearTop = e.clientY < 200;
+  header.dataset.mouseOver = isNearTop;
+  header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
+});
+</script>
+
 <body>
 	<header>
-		<div class="container">
+		<div class="title">
 			<h1>Luke Hensman</h1>
-			<nav>
-				<ul>
-					<li><a href="#top">About</a></li>
-					<li><a href="#gallery">Gallery</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
 		</div>
+		<nav>
+			<ul>
+				<li><a href="#top">About</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
+
 
 
 
@@ -26,7 +43,7 @@
 		<div id="top">
 			<section id="about">
 				<h2>About Me</h2>
-				<p>Hello, please enjoy my portfolio. My name is Luke, and I am a model based in London.</p>
+				<p>My name is Luke, and I am a model based in London.</p>
 			</section>
 		</div>
 

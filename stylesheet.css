@@ -1,20 +1,64 @@
 /* Styling for the header section */
 
-
 body {
-  padding-top: 80px;
+  padding-top: 85px;
 }
 
 header {
+  top: 0;
+  left: 1%;
+  width: 98%;
+  margin-top: -85px;
+  height: 85px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  z-index: 1;
+}
+
+.sticky {
   position: fixed;
   top: 0;
-  left: 2%;
-  width: 96%;
-  background-color: #ffffff;
-  color: #333333;
-  padding: 20px;
-  box-sizing: border-box;
-  border-bottom: 4px solid black;
+  margin-top: 0 !important;
+  left: 1%;
+  width: 98%;
+  height: 85px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  z-index: 1;
+}
+
+header .title {
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding-left: 7%;
+}
+
+nav{
+  padding-right: 7%;
+
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  padding-inline: 12%;
+  margin: 0;
 }
 
 nav ul {
@@ -46,32 +90,32 @@ nav a::before {
   width: 0;
   height: 4px;
   background-color: black;
-  transition: width 0.2s ease-in-out;
+  transition: width 0.1s ease-in-out;
 }
 
 nav a:hover::before {
   width: 100%;
 }
 
-header h1 {
-  font-size: 40px;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
+nav li:not(:last-child) a {
+  margin-right: 20px;
 }
 
-nav li a {
-  padding: 10px 20px;
+/* Styles to make the header fixed on scroll */
+
+
+
+nav {
+  margin-right: 20px;
 }
 
-nav li a:hover {
-  background-color: #fff;
-  color: #000;
+nav ul {
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
-.container h1 {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
+nav li:not(:last-child) a {
+  margin-right: 30px;
 }
 
 
