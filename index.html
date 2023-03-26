@@ -7,19 +7,26 @@
 </head>
 
 <script>
-  window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  const pageTop = window.pageYOffset || document.documentElement.scrollTop;
-  const isNearTop = pageTop < 100;
-  header.classList.toggle('sticky', isNearTop && header.dataset.mouseOver === 'true');
-});
+	window.addEventListener('scroll', function () {
+		const header = document.querySelector('header');
+		const pageTop = window.pageYOffset || document.documentElement.scrollTop;
+		const isNearTop = pageTop < 100;
+		header.classList.toggle('sticky', isNearTop && header.dataset.mouseOver === 'true');
+	});
 
-document.addEventListener('mouseover', function(e) {
-  const header = document.querySelector('header');
-  const isNearTop = e.clientY < 200;
-  header.dataset.mouseOver = isNearTop;
-  header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
-});
+	document.addEventListener('mouseover', function (e) {
+		const header = document.querySelector('header');
+		const isNearTop = e.clientY < 200;
+		header.dataset.mouseOver = isNearTop;
+		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
+	});
+
+	const parallax = document.querySelector(".parallax");
+
+	window.addEventListener("scroll", function () {
+		let offset = window.pageYOffset;
+		parallax.style.backgroundPositionY = offset * 0.7 + "px";
+	});
 </script>
 
 <body>
@@ -39,13 +46,27 @@ document.addEventListener('mouseover', function(e) {
 
 
 
+
 	<main>
 		<div id="top">
-			<section id="about">
-				<h2>About Me</h2>
-				<p>My name is Luke, and I am a model based in London.</p>
-			</section>
-		</div>
+			<section class="about">
+				<div class="container">
+				  <div class="row">
+					<div class="col-md-6">
+					  <div class="about-img">
+						<img src="img/mono2.jpg" alt="Your Image">
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="about-text">
+						<h2>About Me</h2>
+						<p>Your about me text goes here.</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>			  
+		  </div>
 
 		<section id="gallery">
 			<h2>Gallery</h2>
