@@ -21,12 +21,36 @@
 		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
 	});
 
-	const parallax = document.querySelector(".parallax");
-
-	window.addEventListener("scroll", function () {
-		let offset = window.pageYOffset;
-		parallax.style.backgroundPositionY = offset * 0.7 + "px";
+	document.addEventListener('mouseout', function (e) {
+		const header = document.querySelector('header');
+		const isNearTop = e.clientY < 200;
+		header.dataset.mouseOver = isNearTop;
+		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
 	});
+
+	// window.addEventListener('scroll', function () {
+	// 	const parallax = document.querySelector('.about-img');
+	// 	let scrollPosition = window.pageYOffset;
+
+	// 	if (scrollPosition < 1000) {
+	// 		parallax.style.transform = 'translateY(' + scrollPosition * .5 + 'px)';
+	// 	}
+	// });
+
+	//above function but stopping after scrolling to the top of gallery
+	window.addEventListener('scroll', function () {
+		const parallax = document.querySelector('.about-img');
+		let scrollPosition = window.pageYOffset;
+
+		if (scrollPosition < 1000) {
+			parallax.style.transform = 'translateY(' + scrollPosition * .5 + 'px)';
+		}
+	});
+
+	
+
+
+
 </script>
 
 <body>
@@ -50,22 +74,20 @@
 	<main>
 		<div id="top">
 			<section class="about">
-				<div class="container">
-				  <div class="row">
-					<div class="col-md-6">
 					  <div class="about-img">
-						<img src="img/mono2.jpg" alt="Your Image">
-					  </div>
-					</div>
-					<div class="col-md-6">
+						<img src="img/mono2.jpg" alt="Head image"> 
+						</div>
 					  <div class="about-text">
 						<h2>About Me</h2>
-						<p>Your about me text goes here.</p>
+						<p>My name and such and such</p>
 					  </div>
 					</div>
 				  </div>
 				</div>
-			  </section>			  
+			  </section>
+			  <div class="about-break">
+
+			  			  
 		  </div>
 
 		<section id="gallery">
