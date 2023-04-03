@@ -15,7 +15,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid black;
-  z-index: 1;
+  z-index: 99;
 }
 
 .sticky {
@@ -140,6 +140,7 @@ h2 {
 
 
 .gallery-container {
+  background-color: whit;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
@@ -150,11 +151,14 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Crop the image to fill the container */
+  border-radius: 10px;
 }
 
+#gallery {
+  background-color: white;
+}
 #gallery h2 {
-  padding-top: 140px;
+  padding-top: 50px;
 }
 
 form label {
@@ -185,7 +189,7 @@ form input[type="submit"] {
 /* Styling for the about section */
 .about {
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1.5fr 1fr;
   align-items: center;
   font-family: 'Helvetica Neue', sans-serif;
 }
@@ -194,10 +198,11 @@ form input[type="submit"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 .about-text {
+  background-color: white;
   text-align: right;
 }
 
@@ -205,7 +210,46 @@ form input[type="submit"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
+
+.about-break {
+  width: 100%;
+  height: 25px;
+  background-color: white;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.details-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: white;
+  margin-top: -100px
+}
+
+.details-item {
+  text-align: left;
+  background-color: white;
+}
+
+.details-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: white;
+  z-index: -1;
+  border-radius: 10px;
+
+
+}
+
 
 
 
@@ -254,6 +298,7 @@ footer p {
   .gallery-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 html {
   scroll-behavior: smooth;

@@ -28,28 +28,27 @@
 		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
 	});
 
-	// window.addEventListener('scroll', function () {
-	// 	const parallax = document.querySelector('.about-img');
-	// 	let scrollPosition = window.pageYOffset;
 
-	// 	if (scrollPosition < 1000) {
-	// 		parallax.style.transform = 'translateY(' + scrollPosition * .5 + 'px)';
-	// 	}
-	// });
 
-	//above function but stopping after scrolling to the top of gallery
 	window.addEventListener('scroll', function () {
 		const parallax = document.querySelector('.about-img');
 		let scrollPosition = window.pageYOffset;
 
 		if (scrollPosition < 1000) {
-			parallax.style.transform = 'translateY(' + scrollPosition * .5 + 'px)';
+			parallax.style.transform = 'translateY(' + scrollPosition * -.3 + 'px)';
+		}
+	});
+
+	window.addEventListener('scroll', function () {
+		const parallax = document.querySelector('.details-img');
+		let scrollPosition = window.pageYOffset;
+
+		if (scrollPosition < 1000) {
+			parallax.style.transform = 'translateY(' + scrollPosition * .2 + 'px)';
 		}
 	});
 
 	
-
-
 
 </script>
 
@@ -74,21 +73,40 @@
 	<main>
 		<div id="top">
 			<section class="about">
-					  <div class="about-img">
-						<img src="img/mono2.jpg" alt="Head image"> 
-						</div>
-					  <div class="about-text">
-						<h2>About Me</h2>
-						<p>My name and such and such</p>
-					  </div>
-					</div>
-				  </div>
+				<div class="about-img">
+					<img src="img/mono2.jpg" alt="Head image">
 				</div>
-			  </section>
-			  <div class="about-break">
+				<div class="about-text">
+					<h2>About Me</h2>
+					<p>My name and such and such</p>
+				</div>
+		</div>
+		</div>
+		</div>
+		</section>
+		<div class="about-break">
+		</div>
 
-			  			  
-		  </div>
+		<section class="details">
+
+			<div class="details-item">
+				<h3>Height</h3>
+				<p>6'2" / 187cm</p>
+				<h3>Weight</h3>
+				<p>138lbs / 63kg</p>
+				<h3>Shoe Size</h3>
+				<p>10</p>
+				<h3>Eye Color</h3>
+				<p>Blue</p>
+				<h3>Hair Color</h3>
+				<p>Dirty/Ash blonde</p>
+			</div>
+			<div class="details-img">
+				<img src="img/mono.jpg" alt="Details image">
+			</div>
+		</section>
+
+
 
 		<section id="gallery">
 			<h2>Gallery</h2>
