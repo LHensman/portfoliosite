@@ -2,6 +2,8 @@
 
 body {
   padding-top: 85px;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
 }
 
 header {
@@ -10,7 +12,7 @@ header {
   width: 98%;
   margin-top: -85px;
   height: 85px;
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -140,10 +142,9 @@ h2 {
 
 
 .gallery-container {
-  background-color: whit;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 }
 
@@ -152,12 +153,17 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  cursor: pointer;
 }
 
-#gallery {
-  background-color: white;
+.gallery {
   margin-top: 100px;
+  text-align: center;
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-top: 5px;
 }
+
 
 
 form label {
@@ -201,7 +207,6 @@ form input[type="submit"] {
 }
 
 .about-text {
-  background-color: white;
   text-align: right;
 }
 
@@ -229,30 +234,26 @@ form input[type="submit"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: white;
   margin-top: -350px;
-  z-index: -2;
+  z-index: -1;
 }
 
 .details-item {
   text-align: left;
-  background-color: white;
 }
+
+
+
 
 .details-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   background-color: white;
-  z-index: -1;
   border-radius: 10px;
 
 
 }
-
-
-
-
 
 
 
@@ -300,6 +301,47 @@ footer p {
   }
 
 }
+
+/* CSS styles for the modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 60px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+	max-width: 80%;
+	max-height: 80%;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
