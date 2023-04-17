@@ -103,8 +103,6 @@ nav li:not(:last-child) a {
   margin-right: 20px;
 }
 
-/* Styles to make the header fixed on scroll */
-
 
 
 nav {
@@ -195,7 +193,7 @@ form input[type="submit"] {
 
 .about {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   align-items: center;
   font-family: 'Helvetica Neue', sans-serif;
 }
@@ -280,7 +278,7 @@ footer p {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
   /* Styling for small screens */
   main {
@@ -298,6 +296,10 @@ footer p {
 
   .gallery-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav ul {
+    display: none;
   }
 
 }
