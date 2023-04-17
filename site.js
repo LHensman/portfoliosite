@@ -44,12 +44,12 @@ app.post('/submit_form', (req, res) => {
         return;
       }
       console.log('Form data appended to JSON file successfully.');
-      res.redirect('http://localhost:3000/index.html');
+      res.redirect('http://localhost:8080/index.html');
     });
   });
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
+app.listen(8080, () => {
+  console.log('Server started on http://localhost:8080');
 });
