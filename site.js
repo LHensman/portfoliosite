@@ -44,7 +44,7 @@ app.post('/submit_form', (req, res) => {
         return;
       }
       console.log('Form data appended to JSON file successfully.');
-      res.redirect('portfolioapp-env.eba-mrcvtfmi.eu-west-2/index.html');
+      res.redirect('http://portfolioapp-env.eba-mrcvtfmi.eu-west-2/index.html');
     });
   });
 });
