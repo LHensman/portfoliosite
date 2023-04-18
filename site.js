@@ -51,5 +51,5 @@ app.post('/submit_form', (req, res) => {
 
 // Start the server
 app.listen(8080, () => {
-  console.log('Server started on http://localhost:8080');
+  console.log('Server started');
 });
