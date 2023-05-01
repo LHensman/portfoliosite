@@ -4,8 +4,8 @@
   "description": "",
   "main": "site.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node site.js"
+    "start": "SENDGRID_API_KEY=$SENDGRID_API_KEY node site.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
