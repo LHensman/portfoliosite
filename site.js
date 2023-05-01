@@ -38,7 +38,7 @@ app.post('/submit_form', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server started at http://localhost:${PORT}`);
+app.listen(process.env.PORT || 8080, '0.0.0.0', function() {
+  console.log('Server started at port' + (process.env.PORT || 8080));
 });
+
