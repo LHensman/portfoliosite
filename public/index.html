@@ -7,68 +7,8 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
-<script>
-	window.addEventListener('scroll', function () {
-		const header = document.querySelector('header');
-		const pageTop = window.pageYOffset || document.documentElement.scrollTop;
-		const isNearTop = pageTop < 100;
-		header.classList.toggle('sticky', isNearTop && header.dataset.mouseOver === 'true');
-	});
-
-	document.addEventListener('mouseover', function (e) {
-		const header = document.querySelector('header');
-		const isNearTop = e.clientY < 200;
-		header.dataset.mouseOver = isNearTop;
-		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
-	});
-
-	document.addEventListener('mouseout', function (e) {
-		const header = document.querySelector('header');
-		const isNearTop = e.clientY < 200;
-		header.dataset.mouseOver = isNearTop;
-		header.classList.toggle('sticky', isNearTop && window.pageYOffset > 0);
-	});
-
-
-
-	window.addEventListener('scroll', function () {
-		const parallax = document.querySelector('.about-img');
-		let scrollPosition = window.pageYOffset;
-
-		if (scrollPosition < 1000) {
-			parallax.style.transform = 'translateY(' + scrollPosition * -.3 + 'px)';
-		}
-	});
-
-	window.addEventListener('scroll', function () {
-		const parallax = document.querySelector('.details-img');
-		let scrollPosition = window.pageYOffset;
-
-		if (scrollPosition < 1000) {
-			parallax.style.transform = 'translateY(' + scrollPosition * .25 + 'px)';
-		}
-	});
-
-
-	function showImage(imageSrc) {
-		// Get the modal element and modal image element
-		var modal = document.getElementById('myModal');
-		var modalImg = document.getElementById('modalImg');
-		var captionText = document.getElementById('caption');
-
-		modal.style.display = 'block';
-		modalImg.src = imageSrc;
-		captionText.innerHTML = 'Image Caption Goes Here';
-	}
-
-	function closeModal() {
-		var modal = document.getElementById('myModal');
-		modal.style.display = 'none';
-	}
-
-
-
-</script>
+<!-- script to link to noMoreInline.js -->
+<script src="noMoreInline.js"></script>
 
 <body>
 	<header>
@@ -96,7 +36,8 @@
 				</div>
 				<div class="about-text">
 					<h2>About Me</h2>
-					<p>Hello, I'm Luke, an aspiring model based in London. I am 21 years old, and have recently become interested in self-expression through modelling.</p>
+					<p>Hello, I'm Luke, an aspiring model based in London. I am 21 years old, and have recently become
+						interested in self-expression through modelling.</p>
 					<p>Piercings can be changed and removed, as well as one straight tattoo on the collarbone.</p>
 				</div>
 		</div>
@@ -151,7 +92,7 @@
 
 		<section id="contact">
 			<h2>Contact Me</h2>
-			<form method="post">
+			<form method="post" onsubmit="submitForm(event)">
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
 
@@ -161,12 +102,12 @@
 				<label for="message">Message:</label>
 				<textarea id="message" name="message" required></textarea>
 
-				<input type="submit" value="Submit" formaction="http://localhost:8080/submit_form">
+				<input type="submit" value="Submit" id="submit-btn">
 			</form>
 		</section>
 
 
-		
+
 	</main>
 
 	<footer>

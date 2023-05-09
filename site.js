@@ -26,7 +26,7 @@ app.post('/submit_form', async (req, res) => {
       from: 'mailbot7070@gmail.com',
       subject: 'Form Submission',
       text: message,
-      html: `<p>${message}</p>`,
+      html: `<p>Email: ${email} \n\nBody:\n ${message}</p>`,
     };
     
     await sgMail.send(msg);
@@ -35,6 +35,7 @@ app.post('/submit_form', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).send('Error sending email');
+    res.redirect('/');
   }
 });
 
